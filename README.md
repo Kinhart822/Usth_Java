@@ -1,5 +1,5 @@
 "# Usth_Java" 
-USTH ICT 2024 Advanced Programming with Python
+USTH ICT 2024 Object-oriented programming
 =====================================================
 
 Students are expected to:
