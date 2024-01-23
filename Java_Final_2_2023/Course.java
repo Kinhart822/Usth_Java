@@ -1,4 +1,4 @@
-package Java_Final_Ex2_2_2023;
+package Java_Final_2_2023;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class Course {
         lecturer.readFromFile(in);
 
         System.out.println("Students:");
-        Student student = new Student(0, ""); 
+        Student student = new Student(0, "", 0); 
         student.readFromFile(in);
     }
 }

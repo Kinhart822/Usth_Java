@@ -1,4 +1,4 @@
-package Java_Final_Ex2_2_2023;
+package Java_Final_2_2023;
 
 import java.io.*;
 
