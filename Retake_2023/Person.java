@@ -3,7 +3,7 @@ package Retake_2023;
 class Person {
     private String name;
 
-    public Person(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -11,7 +11,5 @@ class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    
 }
