@@ -1,5 +1,6 @@
 package Java_Final_2023;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class Course {
@@ -35,15 +36,36 @@ public class Course {
         return students;
     }
 
-    public void displayStatus(){
-        System.out.println("Student status: ");
-        for (Student student : students){
-            if (student.getMidTermScore() > 7 && student.getFinalScore() >= 10){
-                System.out.println("ID: " + student.getId() + ", Name: " + student.getName() + " => Passed");
-            } else {
-                System.out.println("ID: " + student.getId() + ", Name: " + student.getName() + " => Retake");
-            }
+     // Thêm phương thức writeToFile vào class Course
+     public void writeToFile(PrintWriter writer) throws IOException {
+        writer.println("Course ID: " + getCourseId() + ", Name: " + getCourseName());
+        writer.println("Lecturers:");
+        for (Lecturer lecturer : getLecturers()) {
+            lecturer.writeToFile(writer);
         }
+
+        writer.println("Students:");
+        for (Student student : getStudents()) {
+            student.writeToFile(writer);
+        }
+
+        writer.println();
+    }
+
+    // Thêm phương thức readFromFile vào class Course
+    public void readFromFile(BufferedReader in) throws IOException {
+        String courseIdLine = in.readLine();
+        String courseNameLine = in.readLine();
+        System.out.println(courseIdLine);
+        System.out.println(courseNameLine);
+
+        System.out.println("Lecturers:");
+        Lecturer lecturer = new Lecturer(0, ""); 
+        lecturer.readFromFile(in);
+
+        System.out.println("Students:");
+        Student student = new Student(0, ""); 
+        student.readFromFile(in);
     }
 }
         

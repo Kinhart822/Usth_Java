@@ -8,47 +8,38 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String args[]) throws IOException {
-        Course[] courses = new Course[3];
+        Course[] courses = new Course[2];
         courses[0] = new Course(01, "OOP");
         courses[1] = new Course(02, "WEB");
-        courses[2] = new Course(03, "IP");
 
         // Thêm giáo viên và sinh viên cho khóa học OOP
-        courses[0].addLecturer(new Lecturer(01, "Lecturer 1"));
-        courses[0].addLecturer(new Lecturer(02, "Lecturer 2"));
-        courses[0].addStudent(new Student(01, "Student 1"));
-        courses[0].addStudent(new Student(02, "Student 2"));
+        Lecturer lecturer1 = new Lecturer(01, "Lecturer 1");
+        courses[0].addLecturer(lecturer1);
+
+        Student student1 = new Student(01, "Student 1");
+        student1.setMidTermScore(2.5f);
+        student1.setFinalScore(12.0f);
+        courses[0].addStudent(student1);
 
         // Thêm giáo viên và sinh viên cho khóa học WEB
-        courses[1].addLecturer(new Lecturer(03, "Lecturer 3"));
-        courses[1].addLecturer(new Lecturer(04, "Lecturer 4"));
-        courses[1].addStudent(new Student(03, "Student 3"));
-        courses[1].addStudent(new Student(04, "Student 4"));
+        Lecturer lecturer2 = new Lecturer(02, "Lecturer 2");
+        courses[1].addLecturer(lecturer2);
+ 
+        Student student2 = new Student(02, "Student 2");
+        student2.setMidTermScore(9.5f);
+        student2.setFinalScore(13.0f);
+        courses[1].addStudent(student2);
 
-        // Thêm giáo viên và sinh viên cho khóa học IP
-        courses[2].addLecturer(new Lecturer(05, "Lecturer 5"));
-        courses[2].addLecturer(new Lecturer(06, "Lecturer 6"));
-        courses[2].addStudent(new Student(05, "Student 5"));
-        courses[2].addStudent(new Student(06, "Student 6"));
+        writeToFile(courses);
+        readFromFile("testout.txt");
     }
     
-    void writeToFile(Course courses[]) {
+    // Thêm phương thức writeToFile vào class Main
+    static void writeToFile(Course[] courses) {
         try {
             PrintWriter writer = new PrintWriter(new FileWriter("testout.txt"));
             for (Course course : courses) {
-                writer.println("Course ID: " + course.getCourseId() + ", Name: " + course.getCourseName());
-
-                writer.println("Lecturers:");
-                for (Lecturer lecturer : course.getLecturers()) {
-                    writer.println("ID: " + lecturer.getId() + ", Name: " + lecturer.getName());
-                }
-
-                writer.println("Students:");
-                for (Student student : course.getStudents()) {
-                    writer.println("ID: " + student.getId() + ", Name: " + student.getName());
-                }
-
-                writer.println(); 
+                course.writeToFile(writer);
             }
             System.out.println("Success...");
             writer.close();
@@ -57,9 +48,10 @@ public class Main {
         }
     }
 
-    void readFromFile(String fname) {
-        try{ 
-            BufferedReader in = new BufferedReader(new FileReader("testout.txt"));
+    // Thêm phương thức readFromFile vào class Main
+    static void readFromFile(String fname) {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(fname));
             String line;
             while ((line = in.readLine()) != null) {
                 System.out.println(line);

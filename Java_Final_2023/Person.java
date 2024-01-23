@@ -1,4 +1,5 @@
 package Java_Final_2023;
+import java.io.*;
 
 public class Person {
     private String name;
@@ -16,5 +17,16 @@ public class Person {
     }
     public int getId(){
         return id;
+    }
+
+    // Thêm phương thức writeToFile vào class Person
+    public void writeToFile(PrintWriter writer) {
+        writer.println("ID: " + getId() + ", Name: " + getName());
+    }
+
+    // Thêm phương thức readFromFile vào class Person
+    public void readFromFile(BufferedReader in) throws IOException {
+        String line = in.readLine();
+        System.out.println(line);
     }
 }
