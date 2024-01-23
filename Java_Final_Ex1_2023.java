@@ -6,17 +6,14 @@ public class Java_Final_Ex1_2023 {
     public static void main(String[] args) {
 	   
         Scanner input = new Scanner(System.in);
-	    int size, size1;
+	    int size;
 	    do{
     	    System.out.print("Nhập dimension của vector thứ nhất:  ");
     		size = input.nextInt(); 
-    		System.out.print("Nhập dimension của vector thứ hai:  ");
-    		size1 = input.nextInt();
-
-	    } while (size < 1 || size1 < 1 || size != size1);
+	    } while (size < 1);
 
 	    int[] vector1 = new int[size];
-	    int[] vector2 = new int[size1];
+	    int[] vector2 = new int[size];
 	    
 	    System.out.println("Nhập vào các giá trị của vector thứ nhất:  ");
 	    for (int i = 0; i < size; i++) {
@@ -32,11 +29,11 @@ public class Java_Final_Ex1_2023 {
 	    }
 		
 		System.out.println("Nhập vào các giá trị của vector thứ hai: ");
-		for (int i = 0; i < size1; i++) {
+		for (int i = 0; i < size; i++) {
 			vector2[i] = input.nextInt();
 		}
 	    System.out.print("vector vừa nhập vào là:  (");
-		for (int i = 0; i < size1; i++) {
+		for (int i = 0; i < size; i++) {
 	       if (i != size - 1) {
 	           System.out.print(vector2[i] + ", ");
 	       } else {
