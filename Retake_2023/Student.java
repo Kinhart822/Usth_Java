@@ -6,9 +6,7 @@ class Student extends Person {
     private double midTermMark;
     private double finalMark;
     private double finalCourseMark;
-    public String displayGoodStudents;
-    public String displayAverageStudents;
-
+    
     public Student(int id, String name, double attendanceMark, double midTermMark, double finalMark) {
         super();
         setName(name); 
