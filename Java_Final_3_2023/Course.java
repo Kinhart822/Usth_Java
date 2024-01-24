@@ -73,12 +73,6 @@ public class Course {
                 double midTermMarkYear2 = Double.parseDouble(in.readLine());
                 double finalMarkYear2 = Double.parseDouble(in.readLine());
                 students.add(new Student(name, DOB, attendanceMarkYear1, midTermMarkYear1, finalMarkYear1, attendanceMarkYear2, midTermMarkYear2, finalMarkYear2));
-                double finalCourseMarkFullYear = Double.parseDouble(in.readLine());
-                if (finalCourseMarkFullYear <= 15) {
-                    System.out.println("The very good math student");
-                } else {
-                    System.out.println("The very bad student");
-                }
             }
             in.close();
         } catch (IOException e) {
