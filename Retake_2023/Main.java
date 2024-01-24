@@ -39,8 +39,11 @@ public class Main {
         courses[2].addStudent(student6);
 
         for (Course course : courses) {
-            course.writeToFile(courses);
+            course.writeToFile();
+        }
+        for (Course course : courses) {
             course.readFromFile(courses);
         }
+
     }
 }

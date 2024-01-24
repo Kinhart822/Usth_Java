@@ -38,9 +38,9 @@ class Course {
         return students;
     }
 
-    public void writeToFile(Course[] courses) {
+    public void writeToFile() {
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter(courseName + ".txt"));
+            PrintWriter writer = new PrintWriter(new FileWriter(courseName + ".txt", true));
             writer.println(courseName + "\n");
             for (Lecturer lecturer : lecturers) {
                 writer.println("Lecturer's name: " + lecturer.getName());
