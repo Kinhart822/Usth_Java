@@ -12,8 +12,9 @@ public class Student extends Person {
     private double finalMarkYear2;
     private double finalCourseMarkYear2;
     private double finalCourseMarkFullYear;
+    public int getFinalCourseMarkFullYear;
 
-    public Student(String fullName, double attendanceMarkYear1, double midTermMarkYear1, double finalMarkYear1, double attendanceMarkYear2, double midTermMarkYear2, double finalMarkYear2){
+    public Student(String name,String DOB, double attendanceMarkYear1, double midTermMarkYear1, double finalMarkYear1, double attendanceMarkYear2, double midTermMarkYear2, double finalMarkYear2){
         super();
         setFullName(name);
         setDateOfBirth(DOB);
@@ -27,7 +28,7 @@ public class Student extends Person {
         this.finalCourseMarkYear2 = (attendanceMarkYear2 * 0.1) + (midTermMarkYear1 * 0.3) + (finalMarkYear1 * 0.6);
         this.finalCourseMarkFullYear = (finalMarkYear1 + finalMarkYear2)/2;
     }
-    
+
     public double getAttendanceMarkYear1() {
         return attendanceMarkYear1;
     }
@@ -63,4 +64,5 @@ public class Student extends Person {
     public double getFinalCourseMarkFullYear() {
         return finalCourseMarkFullYear;
     }
+    
 }
