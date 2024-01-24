@@ -31,7 +31,7 @@ public class Student extends Person {
         writer.println("Midterm Score: " + getMidTermScore());
         writer.println("Final Score: " + getFinalScore());
         String status = (getMidTermScore() > 7 && getFinalScore() >= 10) ? "Passed" : "Retake";
-        writer.println("Status: " + status);
+        writer.println("Status: " + status + "\n");
     }
 
     // Thêm phương thức readFromFile vào class Student

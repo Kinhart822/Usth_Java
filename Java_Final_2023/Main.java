@@ -15,6 +15,8 @@ public class Main {
         // Thêm giáo viên và sinh viên cho khóa học OOP
         Lecturer lecturer1 = new Lecturer(01, "Lecturer 1");
         courses[0].addLecturer(lecturer1);
+        Lecturer lecturer2 = new Lecturer(02, "Lecturer 2");
+        courses[0].addLecturer(lecturer2);
 
         Student student1 = new Student(01, "Student 1");
         student1.setMidTermScore(2.5f);
@@ -22,13 +24,18 @@ public class Main {
         courses[0].addStudent(student1);
 
         // Thêm giáo viên và sinh viên cho khóa học WEB
-        Lecturer lecturer2 = new Lecturer(02, "Lecturer 2");
-        courses[1].addLecturer(lecturer2);
+        Lecturer lecturer3 = new Lecturer(03, "Lecturer 2");
+        courses[1].addLecturer(lecturer3);
  
         Student student2 = new Student(02, "Student 2");
         student2.setMidTermScore(9.5f);
         student2.setFinalScore(13.0f);
         courses[1].addStudent(student2);
+        Student student3 = new Student(03, "Student 3");
+        student3.setMidTermScore(2.5f);
+        student3.setFinalScore(13.0f);
+        courses[1].addStudent(student3);
+
 
         writeToFile(courses);
         readFromFile("testout.txt");
