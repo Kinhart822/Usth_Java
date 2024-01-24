@@ -42,7 +42,7 @@ public class Main {
     // Thêm phương thức writeToFile vào class Main
     static void writeToFile(Course[] courses) {
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter("testout.txt"));
+            PrintWriter writer = new PrintWriter(new FileWriter("testout1.txt"));
             for (Course course : courses) {
                 course.writeToFile(writer);
             }

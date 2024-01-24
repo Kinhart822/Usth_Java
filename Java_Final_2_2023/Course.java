@@ -39,12 +39,12 @@ public class Course {
      // Thêm phương thức writeToFile vào class Course
      public void writeToFile(PrintWriter writer) throws IOException {
         writer.println("Course ID: " + getCourseId() + ", Name: " + getCourseName());
-        writer.println("Lecturer(s):");
+        writer.println("\n  Lecturer(s):");
         for (Lecturer lecturer : getLecturers()) {
             lecturer.writeToFile(writer);
         }
 
-        writer.println("Student(s):");
+        writer.println("\n  Student(s):");
         for (Student student : getStudents()) {
             student.writeToFile(writer);
         }

@@ -46,11 +46,11 @@ public class Student extends Person {
         if (averageMidtermScore > 7 && averageFinalScore >= 10) {
             writer.println("Average Midterm Score: " + averageMidtermScore);
             writer.println("Average Final Score: " + averageFinalScore);
-            writer.println("Status: Passed");
+            writer.println("Status: Passed  \n");
         } else {
             writer.println("Average Midterm Score: " + averageMidtermScore);
             writer.println("Average Final Score: " + averageFinalScore);
-            writer.println("Status: Retake");
+            writer.println("Status: Retake  \n");
         }
     }
 
