@@ -13,11 +13,11 @@ public class Student extends Person {
         this.midTermMark = new double[numCourses];
         this.finalMark = new double[numCourses];
     }
-    public void setMidTermScore(int courseIndex, float midtermScore) {
+    public void setMidTermScore(int courseIndex, double midtermScore) {
         this.midTermMark[courseIndex] = midtermScore;
     }
 
-    public void setFinalScore(int courseIndex, float finalScore) {
+    public void setFinalScore(int courseIndex, double finalScore) {
         this.finalMark[courseIndex] = finalScore;
     }
 
