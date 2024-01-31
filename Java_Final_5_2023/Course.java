@@ -45,7 +45,7 @@ public class Course {
                 writer.println("  Student's Id : " + student.getId());
                 writer.println("Student's mid-term mark: " + student.getMidTermScore(courseId));
                 writer.println("Student's final mark: " + student.getFinalScore(courseId));
-                student.calculateAndPrintStatus(writer);
+                student.calculateAndPrintStatus(writer); 
             }
             System.out.println("Success...");
             writer.close();
@@ -60,6 +60,9 @@ public class Course {
             String line;
             while ((line = in.readLine()) != null) {
                 System.out.println(line);
+            }
+            for (Student student : students) {
+                student.calculateAndPrintStatus(new PrintWriter(System.out)); 
             }
             in.close();
         } catch (IOException e) {
